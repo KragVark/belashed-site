@@ -15,16 +15,27 @@ mobileMenu.querySelectorAll("a").forEach((link) => {
 });
 
 /* =========================================
-   2. HERO TYPED WORD EFFECT
+   2. HERO WORD TRANSITION
+   Smoother and more premium than hard text swapping
    ========================================= */
 const typedWord = document.getElementById("typedWord");
 const words = ["luxury", "polished", "premium", "elegant", "flawless"];
 let wordIndex = 0;
 
+typedWord.classList.add("word-enter");
+
 setInterval(() => {
-  wordIndex = (wordIndex + 1) % words.length;
-  typedWord.textContent = words[wordIndex];
-}, 2200);
+  typedWord.classList.remove("word-enter");
+  typedWord.classList.add("word-exit");
+
+  setTimeout(() => {
+    wordIndex = (wordIndex + 1) % words.length;
+    typedWord.textContent = words[wordIndex];
+
+    typedWord.classList.remove("word-exit");
+    typedWord.classList.add("word-enter");
+  }, 420);
+}, 2600);
 
 /* =========================================
    3. TOP SCROLL PROGRESS BAR
@@ -80,23 +91,28 @@ faqItems.forEach((item) => {
 
 /* =========================================
    6. SCROLL REVEAL ANIMATIONS
+   More professional reveal using IntersectionObserver
    ========================================= */
 const revealElements = document.querySelectorAll(".reveal");
 
-const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.88;
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.14,
+    rootMargin: "0px 0px -40px 0px"
+  }
+);
 
-  revealElements.forEach((element) => {
-    const elementTop = element.getBoundingClientRect().top;
-
-    if (elementTop < triggerBottom) {
-      element.classList.add("active");
-    }
-  });
-};
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
 
 /* =========================================
    7. PREMIUM CATEGORY GALLERY MODAL

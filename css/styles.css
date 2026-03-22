@@ -342,8 +342,35 @@ textarea {
   max-width: 700px;
 }
 
+.typed-word-wrap {
+  display: inline-block;
+  position: relative;
+  min-width: 180px;
+  height: 1.1em;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
 .typed-word {
+  display: inline-block;
   color: var(--gold);
+  will-change: transform, opacity;
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.typed-word.word-enter {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.typed-word.word-exit {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(6px);
 }
 
 .hero-text {
@@ -1165,20 +1192,35 @@ textarea {
 
 /* =========================================
    18. SCROLL REVEAL ANIMATION
+   Softer, more premium and controlled
    ========================================= */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translate3d(0, 40px, 0) scale(0.985);
+  filter: blur(8px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
 }
 
 .reveal.reveal-delay {
-  transition-delay: 0.15s;
+  transition-delay: 0.12s;
+}
+
+.reveal.reveal-delay-2 {
+  transition-delay: 0.22s;
+}
+
+.reveal.reveal-delay-3 {
+  transition-delay: 0.32s;
 }
 
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
 }
 
 /* =========================================
