@@ -1,97 +1,57 @@
 /* =========================================
-   1. MOBILE MENU
+   1. MOBILE MENU TOGGLE
    ========================================= */
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
-
-menuToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("active");
-});
-
-mobileMenu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-  });
-});
-
-/* =========================================
-   2. HERO WORD TRANSITION
-   Smoother and more premium than hard text swapping
-   ========================================= */
-const typedWord = document.getElementById("typedWord");
-const words = ["luxury", "polished", "premium", "elegant", "flawless"];
-let wordIndex = 0;
-
-typedWord.classList.add("word-enter");
-
-setInterval(() => {
-  typedWord.classList.remove("word-enter");
-  typedWord.classList.add("word-exit");
-
-  setTimeout(() => {
-    wordIndex = (wordIndex + 1) % words.length;
-    typedWord.textContent = words[wordIndex];
-
-    typedWord.classList.remove("word-exit");
-    typedWord.classList.add("word-enter");
-  }, 420);
-}, 2600);
-
-/* =========================================
-   3. TOP SCROLL PROGRESS BAR
-   ========================================= */
+const siteHeader = document.getElementById("siteHeader");
+const backToTop = document.getElementById("backToTop");
 const scrollProgress = document.getElementById("scrollProgress");
 
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = (scrollTop / docHeight) * 100;
-  scrollProgress.style.width = `${progress}%`;
-});
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("menu-open", isOpen);
+  });
+
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    });
+  });
+}
 
 /* =========================================
-   4. BACK TO TOP BUTTON
+   2. HEADER SCROLL STATE + TOP PROGRESS BAR + BACK TO TOP
    ========================================= */
-const backToTop = document.getElementById("backToTop");
-
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 350) {
-    backToTop.classList.add("show");
-  } else {
-    backToTop.classList.remove("show");
+  const scrollTop = window.scrollY;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+
+  if (scrollProgress) {
+    scrollProgress.style.width = `${progress}%`;
+  }
+
+  if (siteHeader) {
+    siteHeader.classList.toggle("scrolled", scrollTop > 16);
+  }
+
+  if (backToTop) {
+    backToTop.classList.toggle("show", scrollTop > 500);
   }
 });
 
-backToTop.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+if (backToTop) {
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
-});
+}
 
 /* =========================================
-   5. FAQ ACCORDION
-   Opens one item at a time
-   ========================================= */
-const faqItems = document.querySelectorAll(".faq-item");
-
-faqItems.forEach((item) => {
-  const question = item.querySelector(".faq-question");
-
-  question.addEventListener("click", () => {
-    faqItems.forEach((faq) => {
-      if (faq !== item) {
-        faq.classList.remove("active");
-      }
-    });
-
-    item.classList.toggle("active");
-  });
-});
-
-/* =========================================
-   6. SCROLL REVEAL ANIMATIONS
-   More professional reveal using IntersectionObserver
+   3. REVEAL ANIMATIONS
    ========================================= */
 const revealElements = document.querySelectorAll(".reveal");
 
@@ -105,194 +65,125 @@ const revealObserver = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.14,
+    threshold: 0.16,
     rootMargin: "0px 0px -40px 0px"
   }
 );
 
-revealElements.forEach((element) => {
-  revealObserver.observe(element);
-});
+revealElements.forEach((element) => revealObserver.observe(element));
 
 /* =========================================
-   7. PREMIUM CATEGORY GALLERY MODAL
-   Opens category-specific image galleries
+   4. RESULTS GALLERY FILTER + LIGHTBOX
    ========================================= */
+const filterButtons = document.querySelectorAll(".results-filter");
+const galleryItems = document.querySelectorAll(".gallery-item");
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
 
-/* 
-   IMPORTANT:
-   Replace these image paths with your real images.
-   Keep as many images per category as you want.
-*/
-const galleryData = {
-  nails: {
-    title: "Nail Gallery",
-    images: [
-      "images/nails-1.jpg",
-      "images/nails-2.jpg",
-      "images/nails-3.jpg",
-      "images/nails-4.jpg",
-      "images/nails-5.jpg"
-    ]
-  },
-  lashes: {
-    title: "Lash Gallery",
-    images: [
-      "images/lashes-1.jpg",
-      "images/lashes-2.jpg",
-      "images/lashes-3.jpg",
-      "images/lashes-4.jpg",
-      "images/lashes-5.jpg"
-    ]
-  },
-  brows: {
-    title: "Brow Gallery",
-    images: [
-      "images/brows-1.jpg",
-      "images/brows-2.jpg",
-      "images/brows-3.jpg",
-      "images/brows-4.jpg",
-      "images/brows-5.jpg"
-    ]
-  },
-  makeup: {
-    title: "Makeup Gallery",
-    images: [
-      "images/makeup-1.jpg",
-      "images/makeup-2.jpg",
-      "images/makeup-3.jpg",
-      "images/makeup-4.jpg",
-      "images/makeup-5.jpg"
-    ]
-  }
-};
+const galleryImages = Array.from(galleryItems).map((item) => {
+  const img = item.querySelector("img");
+  return {
+    src: img.getAttribute("src"),
+    alt: img.getAttribute("alt"),
+    category: item.dataset.category
+  };
+});
 
-const openGalleryButtons = document.querySelectorAll(".open-gallery-btn");
-const galleryModal = document.getElementById("galleryModal");
-const galleryModalOverlay = document.getElementById("galleryModalOverlay");
-const galleryClose = document.getElementById("galleryClose");
-const galleryPrev = document.getElementById("galleryPrev");
-const galleryNext = document.getElementById("galleryNext");
-const galleryMainImage = document.getElementById("galleryMainImage");
-const galleryModalTitle = document.getElementById("galleryModalTitle");
-const galleryThumbnails = document.getElementById("galleryThumbnails");
+let currentFilter = "all";
+let visibleImages = [...galleryImages];
+let currentIndex = 0;
 
-let currentCategory = null;
-let currentImageIndex = 0;
-
-/* Open a category gallery */
-function openGallery(categoryKey) {
-  currentCategory = galleryData[categoryKey];
-  currentImageIndex = 0;
-
-  if (!currentCategory) return;
-
-  galleryModalTitle.textContent = currentCategory.title;
-  renderGalleryImage();
-  renderThumbnails();
-
-  galleryModal.classList.add("active");
-  galleryModal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-}
-
-/* Close modal */
-function closeGallery() {
-  galleryModal.classList.remove("active");
-  galleryModal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-}
-
-/* Update main image */
-function renderGalleryImage() {
-  if (!currentCategory) return;
-
-  galleryMainImage.src = currentCategory.images[currentImageIndex];
-  galleryMainImage.alt = `${currentCategory.title} image ${currentImageIndex + 1}`;
-
-  updateActiveThumbnail();
-}
-
-/* Create thumbnails */
-function renderThumbnails() {
-  if (!currentCategory) return;
-
-  galleryThumbnails.innerHTML = "";
-
-  currentCategory.images.forEach((imageSrc, index) => {
-    const thumbButton = document.createElement("button");
-    thumbButton.className = "gallery-thumb";
-    thumbButton.setAttribute("type", "button");
-    thumbButton.innerHTML = `<img src="${imageSrc}" alt="${currentCategory.title} thumbnail ${index + 1}">`;
-
-    thumbButton.addEventListener("click", () => {
-      currentImageIndex = index;
-      renderGalleryImage();
-    });
-
-    galleryThumbnails.appendChild(thumbButton);
+function updateVisibleGallery() {
+  galleryItems.forEach((item) => {
+    const category = item.dataset.category;
+    const shouldShow = currentFilter === "all" || category === currentFilter;
+    item.classList.toggle("hidden", !shouldShow);
   });
 
-  updateActiveThumbnail();
+  visibleImages = galleryImages.filter((image) => currentFilter === "all" || image.category === currentFilter);
 }
 
-/* Highlight active thumbnail */
-function updateActiveThumbnail() {
-  const thumbs = galleryThumbnails.querySelectorAll(".gallery-thumb");
-
-  thumbs.forEach((thumb, index) => {
-    thumb.classList.toggle("active", index === currentImageIndex);
-  });
-}
-
-/* Previous image */
-function showPreviousImage() {
-  if (!currentCategory) return;
-
-  currentImageIndex =
-    (currentImageIndex - 1 + currentCategory.images.length) %
-    currentCategory.images.length;
-
-  renderGalleryImage();
-}
-
-/* Next image */
-function showNextImage() {
-  if (!currentCategory) return;
-
-  currentImageIndex =
-    (currentImageIndex + 1) % currentCategory.images.length;
-
-  renderGalleryImage();
-}
-
-/* Open buttons */
-openGalleryButtons.forEach((button) => {
+filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const category = button.dataset.category;
-    openGallery(category);
+    currentFilter = button.dataset.filter;
+    filterButtons.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+    updateVisibleGallery();
   });
 });
 
-/* Controls */
-galleryClose.addEventListener("click", closeGallery);
-galleryModalOverlay.addEventListener("click", closeGallery);
-galleryPrev.addEventListener("click", showPreviousImage);
-galleryNext.addEventListener("click", showNextImage);
+function showLightboxImage() {
+  const currentImage = visibleImages[currentIndex];
+  if (!currentImage || !lightboxImage) return;
+  lightboxImage.src = currentImage.src;
+  lightboxImage.alt = currentImage.alt;
+}
 
-/* Keyboard support */
+function openLightbox(indexFromOriginalList) {
+  const selectedImage = galleryImages[indexFromOriginalList];
+  visibleImages = galleryImages.filter((image) => currentFilter === "all" || image.category === currentFilter);
+  currentIndex = visibleImages.findIndex((image) => image.src === selectedImage.src);
+  if (currentIndex === -1) currentIndex = 0;
+  showLightboxImage();
+  lightbox?.classList.add("active");
+  document.body.style.overflow = "hidden";
+  lightbox?.setAttribute("aria-hidden", "false");
+}
+
+function closeLightbox() {
+  lightbox?.classList.remove("active");
+  document.body.style.overflow = "";
+  lightbox?.setAttribute("aria-hidden", "true");
+}
+
+function showNextImage() {
+  if (!visibleImages.length) return;
+  currentIndex = (currentIndex + 1) % visibleImages.length;
+  showLightboxImage();
+}
+
+function showPrevImage() {
+  if (!visibleImages.length) return;
+  currentIndex = (currentIndex - 1 + visibleImages.length) % visibleImages.length;
+  showLightboxImage();
+}
+
+galleryItems.forEach((item) => {
+  item.addEventListener("click", () => openLightbox(Number(item.dataset.index)));
+});
+
+lightboxClose?.addEventListener("click", closeLightbox);
+lightboxNext?.addEventListener("click", showNextImage);
+lightboxPrev?.addEventListener("click", showPrevImage);
+lightbox?.addEventListener("click", (event) => {
+  if (event.target === lightbox) closeLightbox();
+});
+
 document.addEventListener("keydown", (event) => {
-  if (!galleryModal.classList.contains("active")) return;
+  if (!lightbox || !lightbox.classList.contains("active")) return;
+  if (event.key === "Escape") closeLightbox();
+  if (event.key === "ArrowRight") showNextImage();
+  if (event.key === "ArrowLeft") showPrevImage();
+});
 
-  if (event.key === "Escape") {
-    closeGallery();
-  }
+updateVisibleGallery();
 
-  if (event.key === "ArrowLeft") {
-    showPreviousImage();
-  }
+/* =========================================
+   5. SERVICE MENU TABS
+   ========================================= */
+const serviceTabs = document.querySelectorAll(".service-tab");
+const servicePanels = document.querySelectorAll(".service-panel");
 
-  if (event.key === "ArrowRight") {
-    showNextImage();
-  }
+serviceTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const selectedTab = tab.dataset.serviceTab;
+    serviceTabs.forEach((item) => item.classList.remove("active"));
+    servicePanels.forEach((panel) => panel.classList.remove("active"));
+    tab.classList.add("active");
+    const activePanel = document.querySelector(`.service-panel[data-service-panel="${selectedTab}"]`);
+    if (activePanel) activePanel.classList.add("active");
+  });
 });

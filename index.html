@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <!-- =========================================
-       BASIC PAGE SETUP
+       BASIC DOCUMENT META
        ========================================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Belashed Beauty Bar | Premium Beauty Studio</title>
+  <title>VELA Beauty Studio | Premium Nails, Lashes, Brows & Beauty</title>
   <meta
     name="description"
-    content="Belashed Beauty Bar offers premium nails, lashes, brows and beauty treatments in a polished, professional setting."
+    content="VELA Beauty Studio offers premium nails, lashes, brows and beauty treatments with refined results, modern presentation and easy WhatsApp booking."
   />
 
   <!-- =========================================
@@ -18,9 +18,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   />
+  <link rel="stylesheet" href="components/whatsapp-button/whatsapp-button.css">
 
   <!-- =========================================
        MAIN STYLESHEET
@@ -29,216 +30,254 @@
 </head>
 <body>
   <!-- =========================================
-       TOP SCROLL PROGRESS BAR
+       TOP PROGRESS BAR
        ========================================= -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- =========================================
-       BACK TO TOP BUTTON
+       FLOATING WHATSAPP BUTTON!
        ========================================= -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    ↑
-  </button>
+    <div
+      class="wa-widget"
+      data-phone="27712345678"
+      data-message="Hi, I want to book."
+      data-title="Chat with VELA Beauty Studio"
+      data-subtitle="We usually reply quickly on WhatsApp."
+      data-button-label="Start chat"
+      data-delay="3000"
+    >
+      <button class="wa-float-btn" aria-label="Open WhatsApp chat preview" type="button">
+        <span class="wa-pulse-ring"></span>
+
+        <svg viewBox="0 0 32 32" class="wa-icon" aria-hidden="true">
+          <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.738 5.588 2.14 8.028L0 32l8.228-2.111A15.931 15.931 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.37 0-4.69-.622-6.732-1.802l-.48-.278-4.885 1.253 1.304-4.76-.313-.494A13.238 13.238 0 0 1 2.667 16C2.667 8.648 8.648 2.667 16 2.667S29.333 8.648 29.333 16 23.352 29.333 16 29.333zm7.208-9.739c-.394-.197-2.329-1.148-2.69-1.279-.361-.131-.624-.197-.886.197-.263.394-1.017 1.279-1.247 1.542-.23.263-.46.296-.854.099-.394-.197-1.665-.614-3.171-1.958-1.172-1.046-1.963-2.338-2.193-2.732-.23-.394-.024-.607.173-.803.177-.177.394-.46.591-.689.197-.23.263-.394.394-.657.131-.263.066-.493-.033-.689-.099-.197-.886-2.135-1.214-2.923-.321-.771-.647-.666-.886-.678l-.755-.013c-.263 0-.689.099-1.05.493-.361.394-1.378 1.345-1.378 3.283 0 1.938 1.411 3.81 1.608 4.073.197.263 2.779 4.242 6.731 5.949.94.407 1.673.649 2.245.83.943.3 1.8.258 2.478.157.756-.113 2.329-.951 2.657-1.87.328-.919.328-1.706.23-1.87-.099-.164-.361-.263-.755-.46z"/>
+        </svg>
+      </button>
+
+      <div class="wa-popup" aria-hidden="true">
+        <div class="wa-popup-header">
+          <div class="wa-popup-avatar">
+            <svg viewBox="0 0 32 32" class="wa-popup-icon" aria-hidden="true">
+              <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.738 5.588 2.14 8.028L0 32l8.228-2.111A15.931 15.931 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.37 0-4.69-.622-6.732-1.802l-.48-.278-4.885 1.253 1.304-4.76-.313-.494A13.238 13.238 0 0 1 2.667 16C2.667 8.648 8.648 2.667 16 2.667S29.333 8.648 29.333 16 23.352 29.333 16 29.333z"/>
+            </svg>
+          </div>
+
+          <div class="wa-popup-meta">
+            <h4 class="wa-popup-title">Chat with us</h4>
+            <p class="wa-popup-subtitle">We usually reply as soon as possible.</p>
+          </div>
+
+          <button class="wa-close-btn" type="button" aria-label="Close WhatsApp preview">
+            &times;
+          </button>
+        </div>
+
+        <div class="wa-popup-body">
+          <div class="wa-message-bubble">
+            Hi there 👋<br />
+            How can we help you today?
+          </div>
+        </div>
+
+        <div class="wa-popup-footer">
+          <a class="wa-chat-link" href="#" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 32 32" class="wa-chat-link-icon" aria-hidden="true">
+              <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.738 5.588 2.14 8.028L0 32l8.228-2.111A15.931 15.931 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.37 0-4.69-.622-6.732-1.802l-.48-.278-4.885 1.253 1.304-4.76-.313-.494A13.238 13.238 0 0 1 2.667 16C2.667 8.648 8.648 2.667 16 2.667S29.333 8.648 29.333 16 23.352 29.333 16 29.333zm7.208-9.739c-.394-.197-2.329-1.148-2.69-1.279-.361-.131-.624-.197-.886.197-.263.394-1.017 1.279-1.247 1.542-.23.263-.46.296-.854.099-.394-.197-1.665-.614-3.171-1.958-1.172-1.046-1.963-2.338-2.193-2.732-.23-.394-.024-.607.173-.803.177-.177.394-.46.591-.689.197-.23.263-.394.394-.657.131-.263.066-.493-.033-.689-.099-.197-.886-2.135-1.214-2.923-.321-.771-.647-.666-.886-.678l-.755-.013c-.263 0-.689.099-1.05.493-.361.394-1.378 1.345-1.378 3.283 0 1.938 1.411 3.81 1.608 4.073.197.263 2.779 4.242 6.731 5.949.94.407 1.673.649 2.245.83.943.3 1.8.258 2.478.157.756-.113 2.329-.951 2.657-1.87.328-.919.328-1.706.23-1.87-.099-.164-.361-.263-.755-.46z"/>
+            </svg>
+            <span class="wa-chat-link-text">Start chat</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
   <!-- =========================================
-       FLOATING WHATSAPP BUTTON
-       Replace with your real number
+       HEADER
        ========================================= -->
-  <a
-    href="https://wa.me/27712345678"
-    class="whatsapp-float"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat on WhatsApp"
-  >
-    WhatsApp
-  </a>
-
-  <!-- =========================================
-       STICKY MOBILE BOOK BUTTON
-       Shows on smaller screens
-       ========================================= -->
-  <a href="#contact" class="mobile-book-bar">Book Appointment</a>
-
-  <!-- =========================================
-       HEADER / NAVIGATION
-       ========================================= -->
-  <header class="site-header">
-    <div class="container nav">
-      <a href="#" class="logo">
-        <span class="logo-mark">B</span>
-        <span class="logo-text">Belashed Beauty Bar</span>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-shell">
+      <a href="#top" class="brand" aria-label="VELA Beauty Studio home">
+        <span class="brand-mark">V</span>
+        <span class="brand-copy">
+          <strong>VELA</strong>
+          <small>Beauty Studio</small>
+        </span>
       </a>
 
-      <nav class="desktop-nav">
+      <nav class="desktop-nav" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#specials">Specials</a>
         <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#results">Gallery</a>
+        <a href="#pricing">Pricing</a>
         <a href="#testimonials">Reviews</a>
-        <a href="#instagram">Instagram</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Book</a>
       </nav>
 
-      <a href="#contact" class="btn btn-gold desktop-cta">Book Now</a>
+      <div class="nav-actions">
+        <a
+          href="https://wa.me/27712345678"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          Book on WhatsApp
+        </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-        ☰
-      </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
 
-    <!-- Mobile menu -->
+    <!-- Mobile navigation drawer -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="#about">About</a>
       <a href="#specials">Specials</a>
       <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#results">Gallery</a>
+      <a href="#pricing">Pricing</a>
       <a href="#testimonials">Reviews</a>
-      <a href="#instagram">Instagram</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="btn btn-gold mobile-menu-btn">Book Now</a>
+      <a href="#contact">Book</a>
+      <a
+        href="https://wa.me/27712345678"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary mobile-menu-cta"
+      >
+        Book on WhatsApp
+      </a>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <!-- =========================================
          HERO SECTION
          ========================================= -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-
+    <section class="hero-section">
       <div class="container hero-grid">
-        <div class="hero-content reveal">
-          <p class="eyebrow">Premium Beauty Studio</p>
-
-            <h1>
-              Beauty services with a
-              <span class="typed-word-wrap">
-                <span class="typed-word" id="typedWord">luxury</span>
-              </span>
-              finish
-            </h1>
-
-          <p class="hero-text">
-            Beauty Studio offers premium nails, lashes, brows and beauty treatments
-            in a clean, polished and professional setting designed to make every client feel confident.
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Pretoria Premium Beauty Studio</p>
+          <h1>Refined beauty. Precision results.</h1>
+          <p class="hero-subtext">
+            Nails • Lashes • Brows • Beauty Treatments
+          </p>
+          <p class="hero-description">
+            VELA Beauty Studio is designed to feel polished from the first click. Premium presentation, clean execution, real results and fast WhatsApp booking.
           </p>
 
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-gold">Book Appointment</a>
-            <a href="#services" class="btn btn-outline">View Services</a>
-          </div>
-
-          <div class="hero-stats">
-            <div>
-              <strong>Beauty</strong>
-              <span>done professionally</span>
-            </div>
-            <div>
-              <strong>Clean</strong>
-              <span>refined experience</span>
-            </div>
-            <div>
-              <strong>Premium</strong>
-              <span>results that last</span>
-            </div>
+            <a
+              href="https://wa.me/27712345678"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              Book on WhatsApp
+            </a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
           </div>
         </div>
 
-        <div class="hero-image-card reveal reveal-delay">
-          <img src="images/hero-nails.jpg" alt="Beauty treatment showcase" />
+        <div class="hero-visual reveal reveal-delay">
+          <div class="hero-image-stack">
+            <figure class="hero-main-card glass-panel">
+              <img src="images/hero-nails2.png" alt="VELA Beauty Studio hero showcase" />
+              <figcaption>
+                <span>Signature finish</span>
+                <strong>Modern beauty, done properly</strong>
+              </figcaption>
+            </figure>
+
+            <div class="hero-floating-card hero-floating-top glass-panel">
+              <p>Featured special</p>
+              <strong>Lashes + Brows Combo</strong>
+              <span>From R499</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================
-         QUICK BOOKING BANNER
+         TRUST STRIP
          ========================================= -->
-    <section class="booking-banner">
-      <div class="container booking-banner-content reveal">
+    <section class="trust-strip">
+      <div class="container trust-strip-grid reveal">
         <div>
-          <p class="section-tag">Quick Booking</p>
-          <h2>Ready for your next beauty appointment?</h2>
-          <p>
-            Book your nails, brows, lashes or beauty treatment in just a few clicks.
-          </p>
+          <span class="trust-label">Refined & Professional</span>
+          <strong>Clean work, attention to detail, and a polished finish every time!</strong>
         </div>
-
-        <div class="booking-banner-actions">
-          <a href="https://wa.me/27712345678" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
-            Book on WhatsApp
-          </a>
-          <a href="#contact" class="btn btn-outline-dark">
-            Send Enquiry
-          </a>
+        <div>
+          <span class="trust-label">Real Results That Last</span>
+          <strong>Lashes, nails and brows done properly - not rushed, not cheap!</strong>
+        </div>
+        <div>
+          <span class="trust-label">Simple, Fast Booking</span>
+          <strong>Book directly on WhatsApp and secure your spot in minutes!</strong>
         </div>
       </div>
     </section>
 
-        <!-- =========================================
-         WEEKLY SPECIALS SECTION
-         Easy to update every week
+    <!-- =========================================
+         SPECIALS SECTION
          ========================================= -->
-    <section class="section section-soft" id="specials">
+    <section class="section" id="specials">
       <div class="container">
-        <div class="section-head center reveal">
+        <div class="section-heading center reveal">
           <p class="section-tag">This Week's Specials</p>
-          <h2>Fresh offers, updated regularly</h2>
+          <h2>Bold offers that deserve attention</h2>
           <p>
-            Use this section to promote weekly deals, seasonal offers, combo specials
-            or slower services you want to push.
+            Discover limited offers designed to give you premium beauty results at even better value.
           </p>
         </div>
 
-        <div class="specials-banner reveal">
-          <div class="specials-banner-content">
-            <p class="specials-banner-label">Now Booking</p>
-            <h3>Limited weekly beauty specials available</h3>
+        <div class="specials-feature reveal">
+          <div class="specials-feature-copy">
+            <span class="pill">Featured Special</span>
+            <h3>Lashes + Brows Combo</h3>
             <p>
-              Book early to secure your preferred time slot for this week’s featured offers.
+              A clean eye refresh that combines fuller lashes with shaped, tinted brows for a polished result.
             </p>
           </div>
 
-          <a href="#contact" class="btn btn-gold">Book a Special</a>
+          <div class="specials-feature-price">
+            <small>From</small>
+            <strong>R499</strong>
+            <span>Usually R620</span>
+          </div>
+
+          <a
+            href="https://wa.me/27712345678"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Claim via WhatsApp
+          </a>
         </div>
 
         <div class="specials-grid">
           <article class="special-card reveal">
-            <span class="special-badge">Save</span>
-            <p class="special-category">Nails</p>
+            <span class="card-kicker">Nails</span>
             <h3>Gel Overlay Special</h3>
-            <p class="special-price">R299</p>
-            <p class="special-old-price">Usually R350</p>
-            <p class="special-text">
-              A clean, glossy gel overlay special for clients who want a polished everyday finish.
-            </p>
-            <a href="#contact" class="btn btn-card-dark">Claim This Special</a>
+            <p class="price-line">From R299 <small>Usually R350</small></p>
+            <p>Glossy, neat and ideal for clients who want a clean everyday finish.</p>
           </article>
 
-          <article class="special-card reveal reveal-delay special-card-featured">
-            <span class="special-badge">Popular</span>
-            <p class="special-category">Combo</p>
-            <h3>Lashes + Brows Combo</h3>
-            <p class="special-price">R499</p>
-            <p class="special-old-price">Usually R620</p>
-            <p class="special-text">
-              Perfect for a full eye-refresh look with shaped brows and enhanced lashes.
-            </p>
-            <a href="#contact" class="btn btn-gold">Claim This Special</a>
+          <article class="special-card reveal reveal-delay featured-card">
+            <span class="card-kicker">Beauty Combo</span>
+            <h3>Signature Refresh</h3>
+            <p class="price-line">From R650 <small>Limited slots</small></p>
+            <p>Nails, brows or lashes combined into one premium appointment block.</p>
           </article>
 
           <article class="special-card reveal">
-            <span class="special-badge">Hot Deal</span>
-            <p class="special-category">Brows</p>
-            <h3>Brow Shape + Tint</h3>
-            <p class="special-price">R180</p>
-            <p class="special-old-price">Usually R230</p>
-            <p class="special-text">
-              A neat brow refresh designed to define the face and keep your look polished.
-            </p>
-            <a href="#contact" class="btn btn-card-dark">Claim This Special</a>
+            <span class="card-kicker">Brows</span>
+            <h3>Shape + Tint</h3>
+            <p class="price-line">From R180 <small>Usually R230</small></p>
+            <p>Sharp definition, cleaner lines and a more finished look in one sitting.</p>
           </article>
         </div>
       </div>
@@ -247,24 +286,46 @@
     <!-- =========================================
          ABOUT SECTION
          ========================================= -->
-    <section class="section" id="about">
-      <div class="container about-grid">
-        <div class="about-image reveal">
-          <img src="images/about-salon.jpg" alt="Beauty salon interior or treatment" />
+    <section class="section section-alt" id="about">
+      <div class="container split-layout">
+        <div class="split-media reveal">
+          <div class="media-card primary-media-card">
+            <img src="images/about-salon.jpg" alt="Inside VELA Beauty Studio" />
+          </div>
         </div>
 
-        <div class="about-content reveal reveal-delay">
-          <p class="section-tag">About Us</p>
-          <h2>More than a nail salon</h2>
-          <p>
-            Belashed Beauty Bar is a modern beauty space focused on detail, presentation,
-            hygiene and client experience. From elegant nails to polished brows and beautiful lashes,
-            every service is done with care and precision.
+        <div class="split-copy reveal reveal-delay">
+          <p class="section-tag">About VELA</p>
+          <h2>Beauty work feels different when the detail is right.</h2>
+                    <p>
+            VELA Beauty Studio is built around precision, presentation and client confidence. 
+            The goal is not just to offer treatments. It is to deliver a result that looks refined, 
+            feels premium and makes booking again easy.
           </p>
           <p>
-            The goal is simple: make the brand feel premium, trustworthy and stylish online,
-            before the client even walks through the door.
+            This brand is not tied to one service. Nails, lashes, 
+            brows and beauty treatments all sit under one clean identity that is easier to grow, 
+            easier to market and easier to trust.
           </p>
+
+          <div class="mini-feature-grid">
+            <article>
+              <strong>Clean branding</strong>
+              <span>Premium and flexible</span>
+            </article>
+            <article>
+              <strong>Real results</strong>
+              <span>Visual proof matters</span>
+            </article>
+            <article>
+              <strong>Human feel</strong>
+              <span>People trust people</span>
+            </article>
+            <article>
+              <strong>Low friction</strong>
+              <span>WhatsApp-first booking</span>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -272,467 +333,487 @@
     <!-- =========================================
          SERVICES SECTION
          ========================================= -->
-    <section class="section section-dark" id="services">
+    <section class="section" id="services">
       <div class="container">
-        <div class="section-head center reveal">
-          <p class="section-tag">Our Services</p>
-          <h2>Professional beauty services, clearly presented</h2>
+        <div class="section-heading center reveal">
+          <p class="section-tag">Services</p>
+          <h2>Clear, modern service presentation</h2>
           <p>
-            Clean cards, premium layout and stronger branding make the offers easier to understand and book.
+            From nails to lashes, brows and beauty treatments, every service is designed to leave you polished and confident.
           </p>
         </div>
 
-        <div class="services-grid services-grid-4">
+        <div class="services-grid">
           <article class="service-card reveal">
-            <p class="service-label">Hands & Feet</p>
-            <h3>Nail Services</h3>
-            <p class="price">From R250</p>
-            <p class="service-text">
-              Elegant manicures, gel sets, overlays, shaping, nail art and polished finishing touches.
+            <div class="service-icon">✦</div>
+            <p class="service-type">Nails</p>
+            <h3>Gloss, structure and detail</h3>
+            <p>
+              Gel overlays, manicures, polished shaping, neat finishes and premium nail presentation.
             </p>
-            <ul>
-              <li>Classic manicure</li>
-              <li>Gel sets and overlays</li>
-              <li>Nail art options</li>
-              <li>Pedicure treatments</li>
-            </ul>
-            <a href="#contact" class="btn btn-card">Book Nails</a>
+            <a href="#pricing" class="text-link">See nail pricing</a>
           </article>
 
-          <article class="service-card featured reveal reveal-delay">
-            <div class="featured-badge">Popular</div>
-            <p class="service-label">Eyes</p>
-            <h3>Lash Services</h3>
-            <p class="price">From R350</p>
-            <p class="service-text">
-              Lash treatments designed to enhance the eyes with a fuller, neater and more refined look.
+          <article class="service-card reveal reveal-delay highlighted-service">
+            <div class="service-icon">✦</div>
+            <p class="service-type">Lashes</p>
+            <h3>Soft fullness and clean definition</h3>
+            <p>
+              Lash sets, fills, lifts and treatments designed to elevate the eye area without looking messy.
             </p>
-            <ul>
-              <li>Lash extensions</li>
-              <li>Lash fills</li>
-              <li>Lash lifts</li>
-              <li>Tint options</li>
-            </ul>
-            <a href="#contact" class="btn btn-gold">Book Lashes</a>
+            <a href="#pricing" class="text-link">See lash pricing</a>
           </article>
 
           <article class="service-card reveal">
-            <p class="service-label">Brows</p>
-            <h3>Brow Services</h3>
-            <p class="price">From R180</p>
-            <p class="service-text">
-              Brow shaping and styling for cleaner lines, fuller definition and a more polished face frame.
+            <div class="service-icon">✦</div>
+            <p class="service-type">Brows</p>
+            <h3>Shape, tint and frame the face</h3>
+            <p>
+              Brow shaping, tinting and laminating that creates a cleaner and more structured result.
             </p>
-            <ul>
-              <li>Brow shaping</li>
-              <li>Brow tinting</li>
-              <li>Brow lamination</li>
-              <li>Defined finish</li>
-            </ul>
-            <a href="#contact" class="btn btn-card">Book Brows</a>
+            <a href="#pricing" class="text-link">See brow pricing</a>
           </article>
 
           <article class="service-card reveal reveal-delay">
-            <p class="service-label">Beauty</p>
-            <h3>Signature Treatments</h3>
-            <p class="price">From R300</p>
-            <p class="service-text">
-              Additional beauty treatments that complete the Belashed experience and round out the brand.
+            <div class="service-icon">✦</div>
+            <p class="service-type">Beauty</p>
+            <h3>Flexible treatments under one brand</h3>
+            <p>
+              Add-on beauty services and custom treatments that strengthen the full VELA experience.
             </p>
-            <ul>
-              <li>Eye treatments</li>
-              <li>Beauty add-ons</li>
-              <li>Package combos</li>
-              <li>Custom appointments</li>
-            </ul>
-            <a href="#contact" class="btn btn-card">Book Treatment</a>
+            <a href="#pricing" class="text-link">See treatment pricing</a>
           </article>
         </div>
-      </div>
-    </section>
 
-    <!-- =========================================
-         FEATURES SECTION
-         ========================================= -->
-    <section class="section" id="why-us">
-      <div class="container">
-        <div class="section-head center reveal">
-          <p class="section-tag">Why Choose Us</p>
-          <h2>A premium beauty brand should feel premium everywhere</h2>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-box reveal">
-            <h3>Detail-focused work</h3>
-            <p>
-              Clean lines, neat finishes and proper attention to the final result.
-            </p>
-          </div>
-
-          <div class="feature-box reveal reveal-delay">
-            <h3>Professional presentation</h3>
-            <p>
-              Strong branding and a polished website immediately build trust.
-            </p>
-          </div>
-
-          <div class="feature-box reveal">
-            <h3>Beauty beyond nails</h3>
-            <p>
-              Lashes, brows and eye treatments expand the business and make the brand stronger.
-            </p>
-          </div>
-
-          <div class="feature-box reveal reveal-delay">
-            <h3>Client-first experience</h3>
-            <p>
-              Clean service, easy booking and beautiful results are what keep clients returning.
-            </p>
-          </div>
+        <div class="section-action reveal">
+          <a href="#pricing" class="btn btn-secondary">View Full Price List</a>
         </div>
       </div>
     </section>
 
     <!-- =========================================
-         PREMIUM CATEGORY GALLERY SECTION
-         Click a category to open that image set
+         RESULTS / GALLERY SECTION
          ========================================= -->
-    <section class="section section-soft" id="gallery">
+    <section class="section section-alt" id="results">
       <div class="container">
-        <div class="section-head center reveal">
+        <div class="section-heading center reveal">
           <p class="section-tag">Gallery</p>
-          <h2>Explore our beauty work by category</h2>
+          <h2>Real work sells faster than promises</h2>
           <p>
-            Browse nails, lashes, brows and makeup in a cleaner, more premium way.
-            Click a category to open that specific gallery.
+            Choose a category to view the gallery. Click any image to open it and scroll through the set.
           </p>
         </div>
 
-        <!-- Category cards shown on page -->
-        <div class="premium-gallery-grid">
-          <!-- Nails -->
-          <article class="premium-gallery-card reveal">
-            <div class="premium-gallery-image-wrap">
-              <img src="images/gallery-nails-cover.jpg" alt="Nail services gallery cover" />
-            </div>
-            <div class="premium-gallery-card-content">
-              <p class="premium-gallery-label">Hands & Feet</p>
-              <h3>Nails</h3>
-              <p>
-                Elegant manicures, gel sets, overlays, nail art and polished finishes.
-              </p>
-              <button
-                class="btn btn-gold open-gallery-btn"
-                data-category="nails"
-              >
-                View Nails
-              </button>
-            </div>
-          </article>
+        <div class="results-toolbar reveal">
+          <button class="results-filter active" data-filter="all" type="button">All</button>
+          <button class="results-filter" data-filter="nails" type="button">Nails</button>
+          <button class="results-filter" data-filter="lashes" type="button">Lashes</button>
+          <button class="results-filter" data-filter="brows" type="button">Brows</button>
+          <button class="results-filter" data-filter="makeup" type="button">Beauty</button>
+        </div>
 
-          <!-- Lashes -->
-          <article class="premium-gallery-card reveal reveal-delay">
-            <div class="premium-gallery-image-wrap">
-              <img src="images/gallery-lashes-cover.jpg" alt="Lash services gallery cover" />
-            </div>
-            <div class="premium-gallery-card-content">
-              <p class="premium-gallery-label">Eyes</p>
-              <h3>Lashes</h3>
-              <p>
-                Lash sets, fills, lifts and other lash treatments with a refined finish.
-              </p>
-              <button
-                class="btn btn-gold open-gallery-btn"
-                data-category="lashes"
-              >
-                View Lashes
-              </button>
-            </div>
-          </article>
+        <div class="results-gallery reveal" id="resultsGallery">
+          <button class="gallery-item" type="button" data-category="nails" data-index="0">
+            <img src="images/nails-1.jpg" alt="Nail result 1" />
+            <span>Nails</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="nails" data-index="1">
+            <img src="images/nails-2.jpg" alt="Nail result 2" />
+            <span>Nails</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="nails" data-index="2">
+            <img src="images/nails-3.jpg" alt="Nail result 3" />
+            <span>Nails</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="nails" data-index="3">
+            <img src="images/nails-4.jpg" alt="Nail result 4" />
+            <span>Nails</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="nails" data-index="4">
+            <img src="images/nails-5.jpg" alt="Nail result 5" />
+            <span>Nails</span>
+          </button>
 
-          <!-- Brows -->
-          <article class="premium-gallery-card reveal">
-            <div class="premium-gallery-image-wrap">
-              <img src="images/gallery-brows-cover.jpg" alt="Brow services gallery cover" />
-            </div>
-            <div class="premium-gallery-card-content">
-              <p class="premium-gallery-label">Brows</p>
-              <h3>Brows</h3>
-              <p>
-                Brow shaping, tinting, lamination and clean, defined brow styling.
-              </p>
-              <button
-                class="btn btn-gold open-gallery-btn"
-                data-category="brows"
-              >
-                View Brows
-              </button>
-            </div>
-          </article>
+          <button class="gallery-item" type="button" data-category="lashes" data-index="5">
+            <img src="images/lashes-1.jpg" alt="Lash result 1" />
+            <span>Lashes</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="lashes" data-index="6">
+            <img src="images/lashes-2.jpg" alt="Lash result 2" />
+            <span>Lashes</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="lashes" data-index="7">
+            <img src="images/lashes-3.jpg" alt="Lash result 3" />
+            <span>Lashes</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="lashes" data-index="8">
+            <img src="images/lashes-4.jpg" alt="Lash result 4" />
+            <span>Lashes</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="lashes" data-index="9">
+            <img src="images/lashes-5.jpg" alt="Lash result 5" />
+            <span>Lashes</span>
+          </button>
 
-          <!-- Makeup -->
-          <article class="premium-gallery-card reveal reveal-delay">
-            <div class="premium-gallery-image-wrap">
-              <img src="images/gallery-makeup-cover.jpg" alt="Makeup services gallery cover" />
-            </div>
-            <div class="premium-gallery-card-content">
-              <p class="premium-gallery-label">Beauty</p>
-              <h3>Makeup</h3>
-              <p>
-                Soft glam, event-ready beauty looks and other polished makeup results.
-              </p>
-              <button
-                class="btn btn-gold open-gallery-btn"
-                data-category="makeup"
-              >
-                View Makeup
-              </button>
-            </div>
-          </article>
+          <button class="gallery-item" type="button" data-category="brows" data-index="10">
+            <img src="images/brows-1.jpg" alt="Brow result 1" />
+            <span>Brows</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="brows" data-index="11">
+            <img src="images/brows-2.jpg" alt="Brow result 2" />
+            <span>Brows</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="brows" data-index="12">
+            <img src="images/brows-3.jpg" alt="Brow result 3" />
+            <span>Brows</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="brows" data-index="13">
+            <img src="images/brows-4.jpg" alt="Brow result 4" />
+            <span>Brows</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="brows" data-index="14">
+            <img src="images/brows-5.jpg" alt="Brow result 5" />
+            <span>Brows</span>
+          </button>
+
+          <button class="gallery-item" type="button" data-category="makeup" data-index="15">
+            <img src="images/makeup-1.jpg" alt="Beauty result 1" />
+            <span>Beauty</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="makeup" data-index="16">
+            <img src="images/makeup-2.jpg" alt="Beauty result 2" />
+            <span>Beauty</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="makeup" data-index="17">
+            <img src="images/makeup-3.jpg" alt="Beauty result 3" />
+            <span>Beauty</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="makeup" data-index="18">
+            <img src="images/makeup-4.jpg" alt="Beauty result 4" />
+            <span>Beauty</span>
+          </button>
+          <button class="gallery-item" type="button" data-category="makeup" data-index="19">
+            <img src="images/makeup-5.jpg" alt="Beauty result 5" />
+            <span>Beauty</span>
+          </button>
+        </div>
+
+        <div class="section-action reveal">
+          <a
+            href="https://wa.me/27712345678"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Book via WhatsApp in seconds
+          </a>
         </div>
       </div>
     </section>
 
     <!-- =========================================
-         GALLERY MODAL / LIGHTBOX
-         Opens selected category images only
+         MODERN PRICING / SERVICE MENU SECTION
          ========================================= -->
-    <div class="gallery-modal" id="galleryModal" aria-hidden="true">
-      <div class="gallery-modal-overlay" id="galleryModalOverlay"></div>
-
-      <div class="gallery-modal-content">
-        <button class="gallery-close" id="galleryClose" aria-label="Close gallery">
-          ×
-        </button>
-
-        <div class="gallery-modal-header">
-          <p class="section-tag">Portfolio</p>
-          <h3 id="galleryModalTitle">Gallery</h3>
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <p class="section-tag">Service Menu</p>
+          <h2>Luxury treatments. Clear pricing.</h2>
+          <p>
+            Select a category to explore our beauty services and starting prices.
+          </p>
         </div>
 
-        <div class="gallery-modal-main">
-          <button class="gallery-nav gallery-prev" id="galleryPrev" aria-label="Previous image">
-            ‹
-          </button>
-
-          <div class="gallery-main-image-wrap">
-            <img id="galleryMainImage" src="" alt="Selected gallery image" />
-          </div>
-
-          <button class="gallery-nav gallery-next" id="galleryNext" aria-label="Next image">
-            ›
-          </button>
+        <div class="service-tabs reveal">
+          <button class="service-tab active" type="button" data-service-tab="nails">Nails</button>
+          <button class="service-tab" type="button" data-service-tab="lashes">Lashes</button>
+          <button class="service-tab" type="button" data-service-tab="brows">Brows</button>
+          <button class="service-tab" type="button" data-service-tab="beauty">Beauty</button>
         </div>
 
-        <div class="gallery-thumbnails" id="galleryThumbnails">
-          <!-- Thumbnails inserted by JavaScript -->
+        <div class="service-panels">
+          <article class="service-panel active reveal" data-service-panel="nails">
+            <div class="service-panel-top">
+              <div>
+                <p class="service-panel-label">Nails</p>
+                <h3>Polished sets with clean finishes and premium detail</h3>
+              </div>
+              <p class="service-panel-meta">Perfect for everyday elegance or statement sets</p>
+            </div>
+            <div class="service-menu-modern">
+              <div class="service-menu-column">
+                <div class="service-item"><div><h4>Gel Overlay</h4><p>Clean, glossy finish for a refined everyday look.</p></div><strong>R250</strong></div>
+                <div class="service-item"><div><h4>Acrylic Full Set</h4><p>Structured full set for longer-lasting definition.</p></div><strong>R450</strong></div>
+                <div class="service-item"><div><h4>Acrylic Fill</h4><p>Maintenance appointment to refresh your current set.</p></div><strong>R350</strong></div>
+              </div>
+              <div class="service-menu-column">
+                <div class="service-item"><div><h4>French Finish</h4><p>Classic white tip finish for a timeless look.</p></div><strong>R80</strong></div>
+                <div class="service-item"><div><h4>Nail Art</h4><p>Custom detailing based on complexity and style.</p></div><strong>From R50</strong></div>
+                <div class="service-item"><div><h4>Soak Off</h4><p>Safe product removal with nail care in mind.</p></div><strong>R100</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-panel reveal" data-service-panel="lashes">
+            <div class="service-panel-top">
+              <div>
+                <p class="service-panel-label">Lashes</p>
+                <h3>Soft, wispy, full, or dramatic — tailored to your look</h3>
+              </div>
+              <p class="service-panel-meta">Designed for everyday beauty or special occasions</p>
+            </div>
+            <div class="service-menu-modern">
+              <div class="service-menu-column">
+                <div class="service-item"><div><h4>Classic Full Set</h4><p>Natural-looking enhancement with elegant definition.</p></div><strong>R400</strong></div>
+                <div class="service-item"><div><h4>Hybrid Full Set <span class="mini-badge">Most booked</span></h4><p>A balanced mix of softness and added fullness.</p></div><strong>R500</strong></div>
+                <div class="service-item"><div><h4>Volume Full Set</h4><p>Fuller, fluffier lashes with more dramatic impact.</p></div><strong>R600</strong></div>
+              </div>
+              <div class="service-menu-column">
+                <div class="service-item"><div><h4>Lash Fill</h4><p>Maintenance appointment to restore fullness.</p></div><strong>From R300</strong></div>
+                <div class="service-item"><div><h4>Lash Removal</h4><p>Professional removal without damaging natural lashes.</p></div><strong>R100</strong></div>
+                <div class="service-item"><div><h4>Lash Bath Prep</h4><p>Cleansing prep before application for better retention.</p></div><strong>R50</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-panel reveal" data-service-panel="brows">
+            <div class="service-panel-top">
+              <div>
+                <p class="service-panel-label">Brows</p>
+                <h3>Defined, sculpted brows that frame your face beautifully</h3>
+              </div>
+              <p class="service-panel-meta">Subtle shaping or fuller brow transformations</p>
+            </div>
+            <div class="service-menu-modern">
+              <div class="service-menu-column">
+                <div class="service-item"><div><h4>Brow Shape</h4><p>Neat shaping to clean up and define your brows.</p></div><strong>R100</strong></div>
+                <div class="service-item"><div><h4>Brow Tint</h4><p>Added depth and tone for a fuller-looking brow.</p></div><strong>R120</strong></div>
+                <div class="service-item"><div><h4>Brow Wax</h4><p>Precise waxing for clean structure and shape.</p></div><strong>R130</strong></div>
+              </div>
+              <div class="service-menu-column">
+                <div class="service-item"><div><h4>Brow Lamination</h4><p>Sleek, lifted brow styling with longer-lasting hold.</p></div><strong>R350</strong></div>
+                <div class="service-item"><div><h4>Lamination + Tint</h4><p>Lifted styling combined with richer brow colour.</p></div><strong>R420</strong></div>
+                <div class="service-item"><div><h4>Brow Clean-up</h4><p>Quick maintenance appointment between full services.</p></div><strong>R70</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-panel reveal" data-service-panel="beauty">
+            <div class="service-panel-top">
+              <div>
+                <p class="service-panel-label">Beauty</p>
+                <h3>Elegant makeup and finishing services for every occasion</h3>
+              </div>
+              <p class="service-panel-meta">From soft glam to event-ready full glam</p>
+            </div>
+            <div class="service-menu-modern">
+              <div class="service-menu-column">
+                <div class="service-item"><div><h4>Soft Glam Makeup</h4><p>Fresh, polished makeup with a soft luxury finish.</p></div><strong>R550</strong></div>
+                <div class="service-item"><div><h4>Full Glam Makeup</h4><p>More definition, drama, and event-ready beauty.</p></div><strong>R750</strong></div>
+                <div class="service-item"><div><h4>Occasion Makeup</h4><p>Tailored glam for birthdays, shoots, or special events.</p></div><strong>From R650</strong></div>
+              </div>
+              <div class="service-menu-column">
+                <div class="service-item"><div><h4>Strip Lashes Add-on</h4><p>Add extra lift and glamour to your final look.</p></div><strong>R80</strong></div>
+                <div class="service-item"><div><h4>Bridal Trial</h4><p>Preview and refine your bridal look in advance.</p></div><strong>From R900</strong></div>
+                <div class="service-item"><div><h4>Touch-up Session</h4><p>Quick refresh for events, shoots, or evening functions.</p></div><strong>R250</strong></div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="service-menu-footer reveal">
+          <p class="service-menu-note">
+            Final pricing may vary depending on style, detail, product selection, design complexity, and add-ons.
+          </p>
+          <a href="https://wa.me/27712345678" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Book your appointment on WhatsApp
+          </a>
         </div>
       </div>
-    </div>
+    </section>
+
 
     <!-- =========================================
          TESTIMONIALS SECTION
          ========================================= -->
-    <section class="section section-dark" id="testimonials">
-      <div class="container">
-        <div class="section-head center reveal">
-          <p class="section-tag">Client Reviews</p>
-          <h2>Results clients talk about</h2>
-          <p>
-            Real reviews matter. Replace these with real client testimonials as soon as possible.
-          </p>
+      <section class="section section-alt" id="reviews">
+        <div class="container">
+          <div class="section-heading center reveal">
+            <p class="section-tag">Client Reviews</p>
+            <h2>What clients are saying</h2>
+            <p>
+              Loved by clients across nails, lashes, brows, and beauty services.
+            </p>
+          </div>
+
+          <div class="reviews-grid">
+            <!-- Review 1 -->
+            <article class="review-card reveal">
+              <div class="review-stars" aria-label="5 star review">★★★★★</div>
+
+              <p class="review-quote">
+                “My nails looked absolutely flawless and the attention to detail was next level. I left feeling so confident.”
+              </p>
+
+              <div class="review-meta">
+                <h3>Kayla M.</h3>
+                <p>Acrylic Full Set</p>
+              </div>
+
+              <span class="review-badge">Verified Google Review</span>
+            </article>
+
+            <!-- Review 2 -->
+            <article class="review-card reveal reveal-delay">
+              <div class="review-stars" aria-label="5 star review">★★★★★</div>
+
+              <p class="review-quote">
+                “Best lash retention I’ve had in a long time. Super professional, relaxing, and the results were beautiful.”
+              </p>
+
+              <div class="review-meta">
+                <h3>Bianca R.</h3>
+                <p>Hybrid Full Set</p>
+              </div>
+
+              <span class="review-badge">Verified Google Review</span>
+            </article>
+
+            <!-- Review 3 -->
+            <article class="review-card reveal">
+              <div class="review-stars" aria-label="5 star review">★★★★★</div>
+
+              <p class="review-quote">
+                “Such a lovely experience from start to finish. My brows came out clean, defined, and exactly how I wanted them.”
+              </p>
+
+              <div class="review-meta">
+                <h3>Leah P.</h3>
+                <p>Brow Lamination + Tint</p>
+              </div>
+
+              <span class="review-badge">Verified Google Review</span>
+            </article>
+          </div>
+
+          <div class="reviews-actions reveal">
+            <a
+              href="https://www.google.com/search?q=YOUR+BUSINESS+NAME+google+reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              Read all reviews on Google
+            </a>
+
+            <a
+              href="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
+              Leave a review
+            </a>
+          </div>
         </div>
+      </section>
 
-        <div class="testimonials-grid">
-          <article class="testimonial-card reveal">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              “Absolutely beautiful service. The attention to detail, the finish and the overall experience felt premium from start to end.”
-            </p>
-            <h3>Sarah M.</h3>
-            <span>Nails Client</span>
-          </article>
-
-          <article class="testimonial-card reveal reveal-delay">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              “My lashes looked stunning and still felt comfortable. Very professional and neat work.”
-            </p>
-            <h3>Danielle P.</h3>
-            <span>Lash Client</span>
-          </article>
-
-          <article class="testimonial-card reveal">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              “My brows came out clean, shaped properly and exactly how I wanted them. Really impressed.”
-            </p>
-            <h3>Melissa K.</h3>
-            <span>Brow Client</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-        <!-- =========================================
+    <!-- =========================================
          INSTAGRAM SECTION
          ========================================= -->
-    <section class="section" id="instagram">
-      <div class="container">
-        <div class="section-head center reveal">
+    <section class="section section-alt" id="instagram">
+      <div class="container split-layout instagram-layout">
+        <div class="split-copy reveal">
           <p class="section-tag">Instagram</p>
-          <h2>See more of our latest work</h2>
+          <h2>Instagram should back up the brand, not just exist.</h2>
           <p>
-            Follow Belashed Beauty Bar on Instagram for fresh sets, lashes, brows,
-            specials and new beauty content.
+            Use real imagery here so the site feels active and current. This block is designed to look more like a premium feed preview than generic buttons.
           </p>
-        </div>
-
-        <div class="instagram-grid">
           <a
             href="https://www.instagram.com/belashed_beauty_bar/"
             target="_blank"
             rel="noopener noreferrer"
-            class="instagram-card reveal"
+            class="btn btn-primary"
           >
-            Latest Nails
-          </a>
-
-          <a
-            href="https://www.instagram.com/belashed_beauty_bar/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="instagram-card reveal reveal-delay"
-          >
-            Latest Lashes
-          </a>
-
-          <a
-            href="https://www.instagram.com/belashed_beauty_bar/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="instagram-card reveal"
-          >
-            Latest Brows
-          </a>
-
-          <a
-            href="https://www.instagram.com/belashed_beauty_bar/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="instagram-card reveal reveal-delay"
-          >
-            Specials & Updates
+            Follow on Instagram
           </a>
         </div>
 
-        <div class="instagram-cta reveal">
-          <a
-            href="https://www.instagram.com/belashed_beauty_bar/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-gold"
-          >
-            Follow @belashed_beauty_bar
-          </a>
+        <div class="instagram-preview reveal reveal-delay">
+          <article class="instagram-preview-card">
+            <img src="images/nails-3.jpg" alt="Instagram preview nails" />
+          </article>
+          <article class="instagram-preview-card">
+            <img src="images/lashes-3.jpg" alt="Instagram preview lashes" />
+          </article>
+          <!-- <article class="instagram-preview-card">
+            <img src="images/brows-3.jpg" alt="Instagram preview brows" />
+          </article>
+          <article class="instagram-preview-card">
+            <img src="images/makeup-3.jpg" alt="Instagram preview beauty" />
+          </article> -->
         </div>
       </div>
     </section>
 
     <!-- =========================================
-         CTA BAND
+         BOOKING CTA BAND
          ========================================= -->
-    <section class="cta-band">
-      <div class="container cta-band-content reveal">
+    <section class="booking-cta-band">
+      <div class="container booking-cta-shell reveal">
         <div>
-          <p class="section-tag">Book Your Appointment</p>
-          <h2>Premium beauty services. Professional care. Beautiful results.</h2>
+          <p class="section-tag">Booking First</p>
+          <h2>Book via WhatsApp in seconds.</h2>
+          <p>No friction. No digging around. Just message, confirm and go.</p>
         </div>
-        <a href="#contact" class="btn btn-gold">Book Today</a>
-      </div>
-    </section>
-
-    <!-- =========================================
-         FAQ SECTION
-         ========================================= -->
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-head center reveal">
-          <p class="section-tag">FAQ</p>
-          <h2>Questions clients usually ask</h2>
-        </div>
-
-        <div class="faq-list">
-          <div class="faq-item reveal">
-            <button class="faq-question">
-              Do I need to book in advance?
-              <span>+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Yes. Booking in advance is recommended so you can get the time slot and service you want.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal reveal-delay">
-            <button class="faq-question">
-              How long do lash appointments take?
-              <span>+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                It depends on the service, but full lash appointments usually take longer than fills or quick maintenance bookings.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal">
-            <button class="faq-question">
-              Can I combine services in one booking?
-              <span>+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Yes. Combo bookings are a smart way to save time and create a full beauty appointment.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal reveal-delay">
-            <button class="faq-question">
-              Can I bring inspiration photos?
-              <span>+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Yes. Reference images help a lot, especially for nails, brows and style-specific beauty looks.
-              </p>
-            </div>
-          </div>
-        </div>
+        <a
+          href="https://wa.me/27712345678"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          Start WhatsApp Booking
+        </a>
       </div>
     </section>
 
     <!-- =========================================
          CONTACT SECTION
-         FORM IS FORMSPREE READY
-         Replace the action URL with your Formspree endpoint
          ========================================= -->
     <section class="section" id="contact">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
-          <p class="section-tag">Contact Us</p>
-          <h2>Let’s get you booked</h2>
+          <p class="section-tag">Contact & Booking</p>
+          <h2>WhatsApp first. Everything else second.</h2>
           <p>
-            Keep booking simple. WhatsApp for quick bookings, Formspree for website enquiries and Instagram for social proof.
+            The main conversion path should be WhatsApp. The enquiry form is still here for people who prefer it, but it should not be the hero of the site.
           </p>
 
-          <div class="contact-details">
-            <p><strong>Phone:</strong> 012 345 6789</p>
-            <p><strong>Email:</strong> hello@belashedbeautybar.co.za</p>
-            <p><strong>Location:</strong> Pretoria, South Africa</p>
-            <p><strong>Hours:</strong> Mon - Sat | 09:00 - 18:00</p>
+          <div class="contact-stack">
+            <a
+              href="https://wa.me/27712345678"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-cta-card"
+            >
+              <span>Fastest option</span>
+              <strong>Book on WhatsApp</strong>
+            </a>
+
+            <div class="contact-info-card">
+              <span>Location</span>
+              <strong>Pretoria, South Africa</strong>
+            </div>
+
+            <div class="contact-info-card">
+              <span>Hours</span>
+              <strong>Mon – Sat | 09:00 – 18:00</strong>
+            </div>
+
+            <div class="contact-info-card">
+              <span>Instagram</span>
+              <strong>@belashed_beauty_bar</strong>
+            </div>
           </div>
         </div>
 
@@ -741,24 +822,40 @@
           action="https://formspree.io/f/YOUR_FORM_ID"
           method="POST"
         >
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="tel" name="phone" placeholder="Your Phone Number" />
+          <div class="form-grid">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
 
-          <select name="service" required>
-            <option value="">Select a Service</option>
-            <option>Nail Services</option>
-            <option>Lash Services</option>
-            <option>Brow Services</option>
-            <option>Signature Treatments</option>
-          </select>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" placeholder="Your WhatsApp number" />
+            </label>
 
-          <textarea
-            name="message"
-            placeholder="Tell us what treatment or style you want"
-          ></textarea>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="Your email" required />
+            </label>
 
-          <button type="submit" class="btn btn-gold">Send Enquiry</button>
+            <label>
+              <span>Service</span>
+              <select name="service" required>
+                <option value="">Choose a service</option>
+                <option>Nails</option>
+                <option>Lashes</option>
+                <option>Brows</option>
+                <option>Beauty Treatments</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Tell VELA what you want to book"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-secondary">Send Enquiry</button>
         </form>
       </div>
     </section>
@@ -768,28 +865,55 @@
        FOOTER
        ========================================= -->
   <footer class="site-footer">
-    <div class="container footer-content">
+    <div class="container footer-grid">
       <div>
-        <h3>Belashed Beauty Bar</h3>
-        <p>Premium beauty services with a polished modern feel.</p>
+        <a href="#top" class="brand footer-brand">
+          <span class="brand-mark">V</span>
+          <span class="brand-copy">
+            <strong>VELA</strong>
+            <small>Beauty Studio</small>
+          </span>
+        </a>
+        <p>Premium nails, lashes, brows and beauty treatments with a cleaner, more modern presentation.</p>
       </div>
 
       <div class="footer-links">
         <a href="#about">About</a>
-        <a href="#specials">Specials</a>
         <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="#instagram">Instagram</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <a href="#results">Gallery</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://wa.me/27712345678" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://www.instagram.com/belashed_beauty_bar/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#contact">Booking</a>
       </div>
     </div>
   </footer>
+
+
+  <!-- =========================================
+       BACK TO TOP BUTTON
+       ========================================= -->
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+
+  <!-- =========================================
+       LIGHTBOX
+       ========================================= -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImage" src="" alt="" />
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+  </div>
 
   <!-- =========================================
        MAIN JAVASCRIPT
        ========================================= -->
   <script src="js/main.js"></script>
+  <script src="components/whatsapp-button/whatsapp-button.js"></script>
 </body>
 </html>
