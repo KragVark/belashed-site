@@ -159,10 +159,16 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">Pretoria Premium Beauty Studio</p>
-          <h1>Refined beauty. Precision results.</h1>
-          <p class="hero-subtext">
+            <h1 class="hero-title">
+              Luxury<br>
+              Beauty for
+              <span class="rotating-word-wrap">
+                <span class="rotating-word shimmer-text" id="rotatingWord">Nails</span>
+              </span>
+            </h1>
+          <!-- <p class="hero-subtext">
             Nails • Lashes • Brows • Beauty Treatments
-          </p>
+          </p> -->
           <p class="hero-description">
             VELA Beauty Studio is designed to feel polished from the first click. Premium presentation, clean execution, real results and fast WhatsApp booking.
           </p>
@@ -201,21 +207,30 @@
     </section>
 
     <!-- =========================================
-         TRUST STRIP
-         ========================================= -->
+        TRUST STRIP
+        ========================================= -->
     <section class="trust-strip">
-      <div class="container trust-strip-grid reveal">
-        <div>
-          <span class="trust-label">Refined & Professional</span>
-          <strong>Clean work, attention to detail, and a polished finish every time!</strong>
-        </div>
-        <div>
-          <span class="trust-label">Real Results That Last</span>
-          <strong>Lashes, nails and brows done properly - not rushed, not cheap!</strong>
-        </div>
-        <div>
-          <span class="trust-label">Simple, Fast Booking</span>
-          <strong>Book directly on WhatsApp and secure your spot in minutes!</strong>
+      <div class="container">
+        <div class="trust-strip-grid reveal-stagger">
+          
+          <article class="trust-card">
+            <span class="trust-card-glow"></span>
+            <p class="trust-label">Refined Craftsmanship</p>
+            <h3>Polished results with precision in every detail.</h3>
+          </article>
+
+          <article class="trust-card">
+            <span class="trust-card-glow"></span>
+            <p class="trust-label">Lasting Beauty</p>
+            <h3>High-quality treatments designed for a flawless, long-wear finish.</h3>
+          </article>
+
+          <article class="trust-card">
+            <span class="trust-card-glow"></span>
+            <p class="trust-label">Effortless Booking</p>
+            <h3>Book your appointment quickly and easily through WhatsApp.</h3>
+          </article>
+
         </div>
       </div>
     </section>
@@ -283,52 +298,65 @@
       </div>
     </section>
 
-    <!-- =========================================
-         ABOUT SECTION
-         ========================================= -->
-    <section class="section section-alt" id="about">
-      <div class="container split-layout">
-        <div class="split-media reveal">
-          <div class="media-card primary-media-card">
-            <img src="images/about-salon.jpg" alt="Inside VELA Beauty Studio" />
+      <!-- =========================================
+          ABOUT SECTION
+          ========================================= -->
+      <section class="about-luxury-section" id="about">
+        <div class="container split-layout about-luxury-layout">
+          
+          <div class="split-media reveal-left">
+            <div class="about-media-shell">
+              <span class="about-media-glow"></span>
+              <div class="media-card primary-media-card about-luxury-card">
+                <img src="images/about-salon.jpg" alt="Inside VELA Beauty Studio" />
+              </div>
+            </div>
+          </div>
+
+          <div class="split-copy reveal-right">
+            <p class="section-tag luxury-tag">About VELA</p>
+            <h2 class="about-luxury-title">Beauty work feels different when the detail is right.</h2>
+
+            <p class="about-luxury-text">
+              VELA Beauty Studio is built around precision, presentation and client confidence.
+              The goal is not just to offer treatments. It is to deliver a result that looks refined,
+              feels premium and makes booking again easy.
+            </p>
+
+            <p class="about-luxury-text">
+              Nails, lashes, brows and beauty treatments all live under one polished identity —
+              designed to feel elevated, build trust instantly and create an experience clients want
+              to return to.
+            </p>
+
+            <div class="mini-feature-grid luxury-feature-grid">
+              <article class="luxury-feature-card">
+                <span class="luxury-feature-glow"></span>
+                <strong>Clean Branding</strong>
+                <span>Premium, polished and flexible</span>
+              </article>
+
+              <article class="luxury-feature-card">
+                <span class="luxury-feature-glow"></span>
+                <strong>Real Results</strong>
+                <span>Visible beauty that speaks for itself</span>
+              </article>
+
+              <article class="luxury-feature-card">
+                <span class="luxury-feature-glow"></span>
+                <strong>Personal Feel</strong>
+                <span>Professional work with a human touch</span>
+              </article>
+
+              <article class="luxury-feature-card">
+                <span class="luxury-feature-glow"></span>
+                <strong>Easy Booking</strong>
+                <span>WhatsApp-first and simple to secure</span>
+              </article>
+            </div>
           </div>
         </div>
-
-        <div class="split-copy reveal reveal-delay">
-          <p class="section-tag">About VELA</p>
-          <h2>Beauty work feels different when the detail is right.</h2>
-                    <p>
-            VELA Beauty Studio is built around precision, presentation and client confidence. 
-            The goal is not just to offer treatments. It is to deliver a result that looks refined, 
-            feels premium and makes booking again easy.
-          </p>
-          <p>
-            This brand is not tied to one service. Nails, lashes, 
-            brows and beauty treatments all sit under one clean identity that is easier to grow, 
-            easier to market and easier to trust.
-          </p>
-
-          <div class="mini-feature-grid">
-            <article>
-              <strong>Clean branding</strong>
-              <span>Premium and flexible</span>
-            </article>
-            <article>
-              <strong>Real results</strong>
-              <span>Visual proof matters</span>
-            </article>
-            <article>
-              <strong>Human feel</strong>
-              <span>People trust people</span>
-            </article>
-            <article>
-              <strong>Low friction</strong>
-              <span>WhatsApp-first booking</span>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
     <!-- =========================================
          SERVICES SECTION

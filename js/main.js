@@ -51,16 +51,19 @@ if (backToTop) {
 }
 
 /* =========================================
-   3. REVEAL ANIMATIONS
+   3. REVEAL ANIMATIONS + TRUST STRIP + ABOUT
    ========================================= */
-const revealElements = document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(
+  ".reveal, .reveal-delay, .reveal-left, .reveal-right, .reveal-stagger"
+);
 
 const revealObserver = new IntersectionObserver(
-  (entries) => {
+  (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("active");
-        revealObserver.unobserve(entry.target);
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       }
     });
   },
@@ -70,7 +73,9 @@ const revealObserver = new IntersectionObserver(
   }
 );
 
-revealElements.forEach((element) => revealObserver.observe(element));
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
 
 /* =========================================
    4. RESULTS GALLERY FILTER + LIGHTBOX
@@ -187,3 +192,35 @@ serviceTabs.forEach((tab) => {
     if (activePanel) activePanel.classList.add("active");
   });
 });
+
+/* =========================================
+   6. HERO REVEALING WORDS
+   ========================================= */
+const words = ["Nails", "Lashes", "Brows", "Makeup"];
+const rotatingWord = document.getElementById("rotatingWord");
+
+let wordIndex = 0;
+
+function changeWord() {
+  rotatingWord.classList.remove("enter", "enter-active", "exit", "exit-active");
+
+  rotatingWord.classList.add("exit");
+
+  requestAnimationFrame(() => {
+    rotatingWord.classList.add("exit-active");
+  });
+
+  setTimeout(() => {
+    wordIndex = (wordIndex + 1) % words.length;
+    rotatingWord.textContent = words[wordIndex];
+
+    rotatingWord.classList.remove("exit", "exit-active");
+    rotatingWord.classList.add("enter");
+
+    requestAnimationFrame(() => {
+      rotatingWord.classList.add("enter-active");
+    });
+  }, 600);
+}
+
+setInterval(changeWord, 3000);
